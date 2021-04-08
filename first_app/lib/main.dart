@@ -5,6 +5,10 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  void Hello() {
+    print('hello my friend');
+  }
+
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -15,11 +19,11 @@ class MyApp extends StatelessWidget {
           children: [
             Text(' text children of column '),
             ElevatedButton(
-              onPressed: null,
+              onPressed: Hello,
               child: Text('its a button'),
             ),
             RaisedButton(
-              onPressed: null,
+              onPressed: Hello,
               child: Text('its a  deprecated button'),
             ),
           ],

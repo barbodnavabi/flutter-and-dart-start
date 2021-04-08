@@ -22,9 +22,15 @@ class MyApp extends StatelessWidget {
               onPressed: Hello,
               child: Text('its a button'),
             ),
-            RaisedButton(
-              onPressed: Hello,
+            ElevatedButton(
+              onPressed: () => print('its a arrow function'),
               child: Text('its a  deprecated button'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                print('ananymos function');
+              },
+              child: Text('its a button'),
             ),
           ],
         ),

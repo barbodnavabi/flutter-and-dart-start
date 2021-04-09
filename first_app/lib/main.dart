@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './question.dart';
+import './awnser.dart';
 void main() {
   runApp(MyApp());
 }
@@ -39,11 +40,7 @@ class MyAppState extends State<MyApp> {
               onPressed: () => print('its a arrow function'),
               child: Text('its a  deprecated button'),
             ),
-            ElevatedButton(
-              onPressed: () {
-                print('ananymos function');
-              },
-              child: Text('its a button'),
+            Awnser(
             ),
           ],
         ),

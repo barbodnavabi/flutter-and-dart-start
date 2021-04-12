@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 
 class Awnser extends StatelessWidget {
+  final Function selectHandler;
+  final String awnserText;
+  Awnser(this.selectHandler,this.awnserText);
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: Color.fromRGBO(255, 0, 21,1),
+      margin: EdgeInsets.all(15),
       child: ElevatedButton(
-        onPressed: null,
-        child: Text('its a button'),
+        onPressed: selectHandler,
+        child: Text(awnserText),
       ),
     );
   }

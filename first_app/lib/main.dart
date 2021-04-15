@@ -31,6 +31,15 @@ class MyAppState extends State<MyApp> {
       {
         'questionText': 'what is your family',
         'awnsers': ['navabi', 'soltani', 'hamidi', 'rezayi'],
+      },
+      {
+        'questionText': 'what is your  favorite calor',
+        'awnsers': ['blue', 'orange', 'black', 'red'],
+      },
+      {
+        'questionText': 'are you a django developer?',
+        
+        'awnsers': ['yes', 'no'],
       }
     ];
     return MaterialApp(
@@ -38,7 +47,7 @@ class MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('this is my app'),
         ),
-        body: Column(
+        body: questionIndex<questions.length ? Column(
           children: [
             Question(
               questions[questionIndex]['questionText'],
@@ -47,7 +56,7 @@ class MyAppState extends State<MyApp> {
               return Awnser(anwserQustion,awnser);
             }).toList()
           ],
-        ),
+        ) : Center(child: Text('this is barbod first app you did it!!!!'),),
       ),
     );
   }

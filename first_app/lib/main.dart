@@ -1,6 +1,8 @@
+import 'package:first_app/result.dart';
 import 'package:flutter/material.dart';
 import './question.dart';
 import './awnser.dart';
+import 'quiz.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,16 +16,16 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  var questionIndex = 0;
-  void anwserQustion() {
+  var _questionIndex = 0;
+  void _anwserQustion() {
     setState(() {
-      questionIndex = questionIndex + 1;
+      _questionIndex = _questionIndex + 1;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
+    var _questions = [
       {
         'questionText': 'what is your name?',
         'awnsers': ['barbod', 'reza', 'babak', 'hamid']
@@ -38,7 +40,6 @@ class MyAppState extends State<MyApp> {
       },
       {
         'questionText': 'are you a django developer?',
-        
         'awnsers': ['yes', 'no'],
       }
     ];
@@ -47,16 +48,9 @@ class MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text('this is my app'),
         ),
-        body: questionIndex<questions.length ? Column(
-          children: [
-            Question(
-              questions[questionIndex]['questionText'],
-            ),
-            ...(questions[questionIndex]['awnsers'] as List<String>).map((awnser) {
-              return Awnser(anwserQustion,awnser);
-            }).toList()
-          ],
-        ) : Center(child: Text('this is barbod first app you did it!!!!'),),
+        body: _questionIndex < _questions.length
+            ? Quiz(_questions, _anwserQustion, _questionIndex)
+            : Result()
       ),
     );
   }
